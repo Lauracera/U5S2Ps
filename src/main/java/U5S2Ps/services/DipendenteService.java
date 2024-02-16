@@ -4,6 +4,7 @@ import U5S2Ps.entities.Dipendente;
 import U5S2Ps.payloads.DipendenteDTO;
 import U5S2Ps.repositories.DipendenteDAO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,5 +24,5 @@ public class DipendenteService {
         return dipendenteDAO.findAll(pageable);
     }
 
-    public Dipendente saveDipendente(DipendenteDTO)
+
 }

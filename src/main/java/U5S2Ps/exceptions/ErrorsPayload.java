@@ -1,9 +1,8 @@
-package U5S2Ps.exeptions;
+package U5S2Ps.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter

@@ -16,13 +16,11 @@ public class DipendenteController {
     private DipendenteService dipendenteService;
 
     @GetMapping
-    public Page<Dipendente> getAllDipendente(@RequestParam(defaultValue = "0")int page,
-                                             @RequestParam(defaultValue = "10")int size,
-                                             @RequestParam(defaultValue = "id")String orderBy){
+    public Page<Dipendente> getAllDipendente(@RequestParam(defaultValue = "0") int page,
+                                             @RequestParam(defaultValue = "10") int size,
+                                             @RequestParam(defaultValue = "id") String orderBy) {
         return this.dipendenteService.getDipendente(page, size, orderBy);
     }
 
-
-    }
 
 }
