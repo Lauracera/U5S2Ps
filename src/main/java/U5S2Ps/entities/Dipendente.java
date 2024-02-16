@@ -13,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "dipendenti")
+@Access(AccessType.FIELD)
 public class Dipendente {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

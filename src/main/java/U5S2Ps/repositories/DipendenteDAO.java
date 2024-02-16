@@ -11,6 +11,5 @@ import java.util.UUID;
 
 @Repository
 public interface DipendenteDAO extends JpaRepository<Dipendente, UUID> {
-
-    boolean exists(String email);
+    boolean existsByEmail(String email);
 }

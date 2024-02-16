@@ -1,6 +1,7 @@
 package U5S2Ps.services;
 
 import U5S2Ps.entities.Dipendente;
+import U5S2Ps.payloads.DipendenteDTO;
 import U5S2Ps.repositories.DipendenteDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,4 +22,6 @@ public class DipendenteService {
         Pageable pageable = PageRequest.of(pageNumber, size, Sort.by(orderBy));
         return dipendenteDAO.findAll(pageable);
     }
+
+    public Dipendente saveDipendente(DipendenteDTO)
 }

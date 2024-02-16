@@ -14,6 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "dispositivi")
+@Access(AccessType.FIELD)
 public class Dispositivo {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
