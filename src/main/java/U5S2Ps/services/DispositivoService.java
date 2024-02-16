@@ -2,8 +2,10 @@ package U5S2Ps.services;
 
 import U5S2Ps.entities.Dipendente;
 import U5S2Ps.entities.Dispositivo;
+import U5S2Ps.payloads.DipendenteDTO;
 import U5S2Ps.repositories.DispositivoDAO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,4 +24,6 @@ public class DispositivoService {
         Pageable pageable = PageRequest.of(pageNumber, size, Sort.by(orderBy));
         return dispositivoDAO.findAll(pageable);
     }
+
+
 }

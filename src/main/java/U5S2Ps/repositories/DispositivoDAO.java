@@ -10,5 +10,5 @@ import java.util.UUID;
 
 @Repository
 public interface DispositivoDAO extends JpaRepository<Dipendente, UUID> {
-    boolean existsById(UUID id);
+
 }

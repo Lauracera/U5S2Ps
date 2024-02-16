@@ -15,5 +15,8 @@ public record DipendenteDTO(
         String cognome,
         @NotEmpty(message = "email obbligatoria")
         @Size(min = 3, max = 15, message = "I caratteri devono essere compresi tra 3 e 15")
-        String email) {
+        String email,
+        @NotEmpty(message = "Id dispositivo obbligatorio")
+        @Size(min = 3, max = 15, message = "I caratteri devono essere compresi tra 3 e 15")
+        String idDisposiivo) {
 }

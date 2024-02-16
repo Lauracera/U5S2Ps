@@ -33,4 +33,6 @@ public class Dipendente {
         this.email = email;
         this.dispositivi = dispositivi;
     }
+
+
 }

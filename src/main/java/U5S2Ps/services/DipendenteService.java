@@ -18,11 +18,22 @@ public class DipendenteService {
     @Autowired
     private DipendenteDAO dipendenteDAO;
 
-    public Page<Dipendente> getDipendente(int pageNumber, int size, String orderBy){
-        if(size > 100) size = 100;
+    public Page<Dipendente> getDipendente(int pageNumber, int size, String orderBy) {
+        if (size > 100) size = 100;
         Pageable pageable = PageRequest.of(pageNumber, size, Sort.by(orderBy));
         return dipendenteDAO.findAll(pageable);
     }
 
+    public Dipendente saveDipendente(DipendenteDTO payload) {
+        dipendenteDAO.findByEmail(payload.email()).ifPresent(dipendente -> {
+            try {
+                throw new BadRequestException("L'email " + dipendente.getEmail() + " è già in uso");
+            } catch (BadRequestException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
+        Dipendente newDipendente = new Dipendente(payload.username(), payload.name(), payload.cognome(), payload.email(), payload.idDispositivo());
+        return dipendenteDAO.save(newDipendente);
+    }
 }
